@@ -10,10 +10,10 @@ from transformers import AutoProcessor, AutoModelForSpeechSeq2Seq
 
 st.set_page_config(page_title="Video to Summary", layout="wide")
 
-st.title("🎥 Video to Summary Generator")
+st.title("🎥 Online Meet Summarizer")
 
 # Upload video
-video = st.file_uploader("Upload .mp4 file", type=["mp4"])
+video = st.file_uploader("Upload .mp4 recording file of your meet", type=["mp4"])
 if video:
     with open("temp.mp4", "wb") as f:
         f.write(video.read())
