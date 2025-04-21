@@ -8,7 +8,7 @@ from utils.preprocess_transcript import clean_transcript  # Import the new prepr
 from utils.refine_summary import refine_summary  # Import the new refine_summary function
 from transformers import AutoProcessor, AutoModelForSpeechSeq2Seq
 
-st.set_page_config(page_title="Video to Summary", layout="wide")
+st.set_page_config(page_title="Online Meet Summarizer", layout="wide")
 
 st.title("🎥 Online Meet Summarizer")
 
