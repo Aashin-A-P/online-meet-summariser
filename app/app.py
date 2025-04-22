@@ -35,15 +35,23 @@ if video:
     st.info("Preprocessing transcript...")
     cleaned_transcript = clean_transcript(transcript)  # Apply the cleaning
 
+    # Calculate the word count of the transcript
+    transcript_word_count = len(cleaned_transcript.split())
+
     st.subheader("📝 Transcript")
     st.text_area("Transcript", cleaned_transcript, height=300)
+    st.info(f"Transcript word count: {transcript_word_count}")  # Display the word count of the transcript
 
     st.info("Summarizing...")
     summarizer = get_summarizer()
     summary = summarize_text(summarizer, cleaned_transcript)  # Summarize the cleaned transcript
 
+    # Calculate the word count of the summary
+    summary_word_count = len(summary.split())
+
     st.subheader("📄 Summary")
     st.success(summary)
+    st.info(f"Summary word count: {summary_word_count}")  # Display the word count of the summary
 
     # Cleanup
     for chunk in chunks + ["temp.mp4", audio_path]:
